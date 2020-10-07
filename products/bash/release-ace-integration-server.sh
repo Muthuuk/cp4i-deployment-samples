@@ -105,9 +105,12 @@ spec:
   - ace-policyproject-ddd
   - application.kdb
   - application.sth
-  - server.conf.demo.yaml
-  - setdbparms.demo.txt
+#  - server.conf.demo.yaml
+#  - setdbparms.demo.txt
   - application.jks
+  - ace-keystore
+  - ace-serverconf
+  - ace-setdbparms
   designerFlowsOperationMode: disabled
   license:
     accept: true
@@ -117,12 +120,17 @@ spec:
   router:
     timeout: 120s
   service:
-    endpointType: http
+    endpointType: https
   useCommonServices: true
   version: 11.0.0.10-r1
   tracing:
     enabled: ${tracing_enabled}
     namespace: ${tracing_namespace}
+  configurations:
+    - ace-keystore
+    - ace-policyproject-ddd
+    - ace-serverconf
+    - ace-setdbparms
 EOF
 
 timer=0
